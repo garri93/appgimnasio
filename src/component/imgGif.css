@@ -1,0 +1,36 @@
+.gif-css {
+  position: relative;
+  width: 100%;
+  max-width: 400px;        /* opcional */
+  height: 300px;            /* altura mínima para que se vean las imágenes */
+  background: #eee;         /* relleno donde la imagen no llega */
+  overflow: hidden;
+}
+
+.gif-css img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* centra la imagen */
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;      /* muestra toda la imagen sin recortar */
+  opacity: 0;
+  animation: fade 4s infinite;
+}
+
+.gif-css img:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.gif-css img:nth-child(2) {
+  animation-delay: 2s;
+}
+
+@keyframes fade {
+  0%   { opacity: 0; }
+  10%  { opacity: 1; }
+  45%  { opacity: 1; }
+  55%  { opacity: 0; }
+  100% { opacity: 0; }
+}
